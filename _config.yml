@@ -21,7 +21,7 @@
 title: Radic-devops Blog
 description: >- # this means to ignore newlines until "baseurl:"
   IT Engineer, specializing in DevOps, Cloud, and Automation. This blog is a collection of my personal projects, and tutorials on various topics related to IT infrastructure, software development, and technology trends.
-baseurl: "https://radic-devops.github.io/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  radic-devops
 
