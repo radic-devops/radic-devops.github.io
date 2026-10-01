@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Github configuring ssh keys | Radic-devops Blog</title>
+<title>Configurando claves SSH en Github | Radic-devops Blog</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Github configuring ssh keys" />
+<meta property="og:title" content="Configurando claves SSH en Github" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="git remote set-url origin git@github.com:radic-devops/radic-devops.github.io.git" />
-<meta property="og:description" content="git remote set-url origin git@github.com:radic-devops/radic-devops.github.io.git" />
+<meta name="description" content="Primero, si no la tienen, han de generar la clave ssh empleando ssh-keygen, con ed25519, basado en curvas elipticas, si no tienen ya las claves privada y públicas generadas en el directorio ~/.ssh/ ." />
+<meta property="og:description" content="Primero, si no la tienen, han de generar la clave ssh empleando ssh-keygen, con ed25519, basado en curvas elipticas, si no tienen ya las claves privada y públicas generadas en el directorio ~/.ssh/ ." />
 <link rel="canonical" href="http://localhost:4000/github/2026/09/30/welcome-to-jekyll.html" />
 <meta property="og:url" content="http://localhost:4000/github/2026/09/30/welcome-to-jekyll.html" />
 <meta property="og:site_name" content="Radic-devops Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2026-09-30T10:55:14+02:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Github configuring ssh keys" />
+<meta property="twitter:title" content="Configurando claves SSH en Github" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-30T10:55:14+02:00","datePublished":"2026-09-30T10:55:14+02:00","description":"git remote set-url origin git@github.com:radic-devops/radic-devops.github.io.git","headline":"Github configuring ssh keys","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/github/2026/09/30/welcome-to-jekyll.html"},"url":"http://localhost:4000/github/2026/09/30/welcome-to-jekyll.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-30T10:55:14+02:00","datePublished":"2026-09-30T10:55:14+02:00","description":"Primero, si no la tienen, han de generar la clave ssh empleando ssh-keygen, con ed25519, basado en curvas elipticas, si no tienen ya las claves privada y públicas generadas en el directorio ~/.ssh/ .","headline":"Configurando claves SSH en Github","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/github/2026/09/30/welcome-to-jekyll.html"},"url":"http://localhost:4000/github/2026/09/30/welcome-to-jekyll.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Radic-devops Blog" /></head>
 <body><header class="site-header" role="banner">
@@ -40,14 +40,25 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Github configuring ssh keys</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Configurando claves SSH en Github</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2026-09-30T10:55:14+02:00" itemprop="datePublished">Sep 30, 2026
       </time></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote set-url origin git@github.com:radic-devops/radic-devops.github.io.git
+    <p>Primero, si no la tienen, han de generar la clave ssh empleando ssh-keygen, con ed25519, basado en curvas elipticas, si no tienen ya las claves privada y públicas generadas en el directorio <code class="language-plaintext highlighter-rouge">~/.ssh/</code> .</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> ed25519 <span class="nt">-C</span> <span class="s2">"[your_mail]"</span>
+</code></pre></div></div>
+<p><img src="/assets/images/image-1.png" alt="alt text" /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> ~/.ssh/id_ed25519.pub
+</code></pre></div></div>
+<p>Ahora, han de poner en su github, en el apartado de claves ssh, por el que pueden acceder pulsando la imagen del perfil de su usuario/ settings o configuración/ ssh o pgp (criptografía de clave pública, que sobretodo se usa para cifrar y descifrar mails, pero en este caso lo podemos configurar en github el PGP [Pretty Good Privacy] como firma, para proporcionar integridad en la autoría de los commits)</p>
+
+<p><img src="/assets/images/image.png" alt="alt text" /></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote set-url origin git@github.com:[user]/[repo].github.io.git
 </code></pre></div></div>
 
   </div><a class="u-url" href="/github/2026/09/30/welcome-to-jekyll.html" hidden></a>
